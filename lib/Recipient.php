@@ -176,6 +176,10 @@ class Recipient extends Resource implements \JsonSerializable
             }
         };
 
+        if ($response['Name'] === null) {
+            $response['Name'] = '';
+        }
+
         $recipient = new self(
             $response['Name'],
             $response['Email'],
